@@ -8,6 +8,8 @@ import { CoursesComponent } from "./courses/courses.component";
 import { PopularComponent } from "./home/popular/popular.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { LoginComponent } from "./login/login.component";
+import { CheckoutComponent } from "./checkout/checkout.component";
+import { CanActivate, CanActivateChild, Resolve } from "./auth.guard";
 
 
 
@@ -19,13 +21,14 @@ const routes: Routes = [
   
     { path: 'Home', component: HomeComponent },
     { path: 'About', component: AboutComponent },
-    { path: 'Contact', component: ContactComponent },
-    { path: 'Courses', component: CoursesComponent },
+    { path: 'Contact', component: ContactComponent, canDeactivate:[(comp:ContactComponent)=>{return comp.CanExit()}] },
+    { path: 'Courses', component: CoursesComponent , resolve: [Resolve]},
     // {path:'Courses/Course/:id',component:CourseDetailComponent},
     {
-      path: 'Courses', children: [
+      path: 'Courses',canActivateChild:[CanActivateChild], children: [
         { path: 'Course/:id', component: CourseDetailComponent },
-        {path:'Popular', component: PopularComponent}
+        {path:'Popular', component: PopularComponent},
+        {path:'Checkout', component:CheckoutComponent}
       ]
     },
     {path:'Login', component:LoginComponent},
@@ -36,7 +39,7 @@ const routes: Routes = [
   ]
 @NgModule({
     imports:[
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {enableTracing:true})
     ],
     exports:[RouterModule]
 })

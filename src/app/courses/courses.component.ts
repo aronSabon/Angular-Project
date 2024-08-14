@@ -14,6 +14,7 @@ export class CoursesComponent implements OnInit {
 
   activeRoute:ActivatedRoute=inject(ActivatedRoute);
   searchString:string;
+
 ngOnInit(): void {
   // this.searchString=this.activeRoute.snapshot.queryParams['search'];
   // this.searchString=this.activeRoute.snapshot.queryParamMap.get('search');
@@ -27,5 +28,6 @@ ngOnInit(): void {
   })
 
 }
+
 
 }

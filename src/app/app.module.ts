@@ -18,6 +18,7 @@ import { PopularComponent } from './home/popular/popular.component';
 import { TestimonyComponent } from './home/testimony/testimony.component';
 import { ServicesComponent } from './home/services/services.component';
 import { RoutingModule } from './routing.module';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { RoutingModule } from './routing.module';
     SearchComponent,
     PopularComponent,
     TestimonyComponent,
-    ServicesComponent
+    ServicesComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

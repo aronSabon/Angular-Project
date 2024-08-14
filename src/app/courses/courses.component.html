@@ -12,7 +12,7 @@
                 <div class="course-image">
                     <img [src]="course.image">
                 </div>
-                <div class="course-title">
+                <div class="course-title ">
                     {{ course.title }}
                 </div>
                 <div class="course-desc">
@@ -23,8 +23,8 @@
                     <div class="course-rating"><b>RATINGS:</b> {{ course.rating }}</div>
                 </div>
                 <div class="course-action-buttons">
-                    <button class="btn">BUY NOW</button>
-                    <button class="btn" [routerLink]="'/Courses/Course/'+course.id">DETAILS</button>
+                    <button class="btn"  [routerLink]="'/Courses/Checkout'" [state]="course">BUY NOW</button>
+                    <button class="btn"  [routerLink]="'/Courses/Course/'+course.id" >DETAILS</button>
                 </div>
             </div>
         </div>

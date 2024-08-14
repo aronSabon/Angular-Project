@@ -4,5 +4,8 @@
   <app-course-detail></app-course-detail> -->
 
   <router-outlet></router-outlet>
+  <div class="overlay" *ngIf="showLoader">
+    <div class="loader"></div>
+  </div>
   <app-footer></app-footer>
 </div>

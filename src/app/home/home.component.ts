@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
   router:Router=inject(Router);
   activeRoute: ActivatedRoute=inject(ActivatedRoute);
 searchText:string;
@@ -20,13 +20,15 @@ this.router.navigate(['Courses']);
   //by default navigate is absolutePath
   // this.router.navigateByUrl('Courses');
 }
-ngOnInit(): void {
-  this.activeRoute.fragment.subscribe((data)=>{
-    console.log(data);
-    this.JumpToSection(data);
-  })
-}
-JumpToSection(section){
-  document.getElementById(section).scrollIntoView({behavior:'smooth'});
-}
+// ngOnInit(): void {
+//   this.activeRoute.fragment.subscribe((data)=>{
+//     console.log(data);
+//     this.JumpToSection(data);
+//   })
+// }
+// JumpToSection(section){
+//   if (typeof document !== 'undefined') {
+//     document.getElementById(section).scrollIntoView({behavior:'smooth'});
+//   }
+// }
 }
